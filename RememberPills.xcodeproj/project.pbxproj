@@ -1,0 +1,101 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 77;
+    objects = {
+
+/* Begin PBXBuildFile section */
+        110000000000000000000001 /* RememberPillsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000001 /* RememberPillsApp.swift */; };
+        110000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000002 /* ContentView.swift */; };
+        110000000000000000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000003 /* Assets.xcassets */; };
+        110000000000000000000004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000004 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        120000000000000000000000 /* RememberPills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberPills.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        120000000000000000000001 /* RememberPillsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberPillsApp.swift; sourceTree = "<group>"; };
+        120000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        120000000000000000000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        120000000000000000000004 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+        120000000000000000000005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+        130000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+        140000000000000000000000 = {isa = PBXGroup; children = (140000000000000000000001, 140000000000000000000002); sourceTree = "<group>"; };
+        140000000000000000000001 /* RememberPills */ = {isa = PBXGroup; children = (120000000000000000000001, 120000000000000000000002, 120000000000000000000003, 120000000000000000000004, 120000000000000000000005); path = RememberPills; sourceTree = "<group>"; };
+        140000000000000000000002 /* Products */ = {isa = PBXGroup; children = (120000000000000000000000); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+        150000000000000000000001 /* RememberPills */ = {isa = PBXNativeTarget; buildConfigurationList = 180000000000000000000001; buildPhases = (130000000000000000000001, 160000000000000000000002, 160000000000000000000003); buildRules = (); dependencies = (); name = RememberPills; productName = RememberPills; productReference = 120000000000000000000000; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+        170000000000000000000001 /* Project object */ = {isa = PBXProject; attributes = {LastUpgradeCheck = 2600; ORGANIZATIONNAME = RememberPills; TargetAttributes = {150000000000000000000001 = {CreatedOnToolsVersion = 26.0; DevelopmentTeam = S8B9FHWV29; ProvisioningStyle = Automatic; }; }; }; buildConfigurationList = 180000000000000000000002; compatibilityVersion = "Xcode 16.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 140000000000000000000000; productRefGroup = 140000000000000000000002; projectDirPath = ""; projectRoot = ""; targets = (150000000000000000000001); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+        160000000000000000000003 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (110000000000000000000003, 110000000000000000000004); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+        160000000000000000000002 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (110000000000000000000001, 110000000000000000000002); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+        190000000000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+            ALWAYS_SEARCH_USER_PATHS = NO;
+            ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+            CLANG_ENABLE_MODULES = YES;
+            CODE_SIGN_STYLE = Automatic;
+            CURRENT_PROJECT_VERSION = 3;
+            DEVELOPMENT_TEAM = S8B9FHWV29;
+            EXECUTABLE_NAME = "$(PRODUCT_NAME)";
+            GENERATE_INFOPLIST_FILE = NO;
+            INFOPLIST_FILE = RememberPills/Info.plist;
+            IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+            MACH_O_TYPE = mh_execute;
+            PRODUCT_BUNDLE_IDENTIFIER = com.rememberpills.app;
+            PRODUCT_NAME = RememberPills;
+            SDKROOT = iphoneos;
+            SKIP_INSTALL = NO;
+            SWIFT_VERSION = 5.0;
+            SUPPORTED_PLATFORMS = iphoneos;
+            TARGETED_DEVICE_FAMILY = "1,2";
+        }; name = Debug; };
+        190000000000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+            ALWAYS_SEARCH_USER_PATHS = NO;
+            ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+            CLANG_ENABLE_MODULES = YES;
+            CODE_SIGN_STYLE = Automatic;
+            CURRENT_PROJECT_VERSION = 3;
+            DEVELOPMENT_TEAM = S8B9FHWV29;
+            EXECUTABLE_NAME = "$(PRODUCT_NAME)";
+            GENERATE_INFOPLIST_FILE = NO;
+            INFOPLIST_FILE = RememberPills/Info.plist;
+            IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+            MACH_O_TYPE = mh_execute;
+            PRODUCT_BUNDLE_IDENTIFIER = com.rememberpills.app;
+            PRODUCT_NAME = RememberPills;
+            SDKROOT = iphoneos;
+            SKIP_INSTALL = NO;
+            SWIFT_VERSION = 5.0;
+            SUPPORTED_PLATFORMS = iphoneos;
+            TARGETED_DEVICE_FAMILY = "1,2";
+        }; name = Release; };
+        190000000000000000000003 /* Project Debug */ = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+        190000000000000000000004 /* Project Release */ = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; SWIFT_COMPILATION_MODE = wholemodule; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+        180000000000000000000001 /* Target config */ = {isa = XCConfigurationList; buildConfigurations = (190000000000000000000001, 190000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        180000000000000000000002 /* Project config */ = {isa = XCConfigurationList; buildConfigurations = (190000000000000000000003, 190000000000000000000004); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+    };
+    rootObject = 170000000000000000000001 /* Project object */;
+}
