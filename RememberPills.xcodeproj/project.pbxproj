@@ -9,7 +9,6 @@
         110000000000000000000001 /* RememberPillsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000001 /* RememberPillsApp.swift */; };
         110000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000002 /* ContentView.swift */; };
         110000000000000000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000003 /* Assets.xcassets */; };
-        110000000000000000000004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000004 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,7 +16,6 @@
         120000000000000000000001 /* RememberPillsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberPillsApp.swift; sourceTree = "<group>"; };
         120000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
         120000000000000000000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-        120000000000000000000004 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
         120000000000000000000005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -27,7 +25,7 @@
 
 /* Begin PBXGroup section */
         140000000000000000000000 = {isa = PBXGroup; children = (140000000000000000000001, 140000000000000000000002); sourceTree = "<group>"; };
-        140000000000000000000001 /* RememberPills */ = {isa = PBXGroup; children = (120000000000000000000001, 120000000000000000000002, 120000000000000000000003, 120000000000000000000004, 120000000000000000000005); path = RememberPills; sourceTree = "<group>"; };
+        140000000000000000000001 /* RememberPills */ = {isa = PBXGroup; children = (120000000000000000000001, 120000000000000000000002, 120000000000000000000003, 120000000000000000000005); path = RememberPills; sourceTree = "<group>"; };
         140000000000000000000002 /* Products */ = {isa = PBXGroup; children = (120000000000000000000000); name = Products; sourceTree = "<group>"; };
 /* End PBXGroup section */
 
@@ -40,7 +38,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-        160000000000000000000003 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (110000000000000000000003, 110000000000000000000004); runOnlyForDeploymentPostprocessing = 0; };
+        160000000000000000000003 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (110000000000000000000003); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
