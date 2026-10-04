@@ -3,8 +3,6 @@ workflows:
     name: RememberPills iOS
     instance_type: mac_mini_m2
     max_build_duration: 30
-    integrations:
-      app_store_connect: Codemagic
     environment:
       ios_signing:
         distribution_type: app_store
@@ -18,17 +16,46 @@ workflows:
       - name: Resolve Swift packages
         script: |
           xcodebuild -resolvePackageDependencies -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME"
+      - name: Verify iOS deployment target
+        script: |
+          set -e
+          echo "Codemagic/Xcode build settings before archive:"
+          xcodebuild -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -configuration Release -showBuildSettings | grep -E 'IPHONEOS_DEPLOYMENT_TARGET|PRODUCT_BUNDLE_IDENTIFIER|PRODUCT_NAME'
+          TARGET="$(xcodebuild -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -configuration Release -showBuildSettings | awk -F' = ' '/^[[:space:]]*IPHONEOS_DEPLOYMENT_TARGET = / {print $2; exit}')"
+          test "$TARGET" = "15.0" || { echo "ERROR: Expected iOS deployment target 15.0 but Xcode reports $TARGET"; exit 1; }
       - name: Build IPA
         script: |
           set -e
           xcode-project use-profiles
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+            --scheme "$XCODE_SCHEME" \
+            --archive-xcargs "IPHONEOS_DEPLOYMENT_TARGET=15.0"
+      - name: Validate IPA executable
+        script: |
+          set -e
+          IPA_PATH="$(find build -type f -name '*.ipa' -print -quit)"
+          if [ -z "$IPA_PATH" ]; then
+            echo "ERROR: No IPA was produced."
+            exit 1
+          fi
+          rm -rf /tmp/rp_ipa_check
+          mkdir -p /tmp/rp_ipa_check
+          unzip -q "$IPA_PATH" -d /tmp/rp_ipa_check
+          APP="/tmp/rp_ipa_check/Payload/RememberPills.app"
+          EXEC="$APP/RememberPills"
+          test -d "$APP" || { echo "ERROR: RememberPills.app is missing."; exit 1; }
+          test -f "$EXEC" || { echo "ERROR: RememberPills executable is missing."; exit 1; }
+          file "$EXEC"
+          file "$EXEC" | grep -q 'Mach-O' || { echo "ERROR: RememberPills is not a Mach-O executable."; exit 1; }
+          plutil -p "$APP/Info.plist"
+          EXEC_NAME="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$APP/Info.plist")"
+          BUNDLE_ID="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist")"
+          test "$EXEC_NAME" = "RememberPills" || { echo "ERROR: CFBundleExecutable=$EXEC_NAME"; exit 1; }
+          test "$BUNDLE_ID" = "com.rememberpills.app" || { echo "ERROR: CFBundleIdentifier=$BUNDLE_ID"; exit 1; }
+          echo "IPA validation passed: executable, Mach-O type, bundle ID, and CFBundleExecutable are correct."
     artifacts:
       - build/**/*.ipa
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: false
-        submit_to_app_store: false
