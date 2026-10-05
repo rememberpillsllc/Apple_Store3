@@ -4,6 +4,8 @@ workflows:
     instance_type: mac_mini_m2
     max_build_duration: 30
     environment:
+      groups:
+        - appstore
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.rememberpills.app
@@ -58,6 +60,5 @@ workflows:
       - build/**/*.ipa
     publishing:
       app_store_connect:
-        api_key: DKKZ68BT4T
-        issuer_id: 3a4c5db7-d5ac-4d59-9c72-52ebbd8ab4ba
+        auth: integration
         submit_to_testflight: true
