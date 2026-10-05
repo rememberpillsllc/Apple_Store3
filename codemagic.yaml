@@ -56,3 +56,8 @@ workflows:
           echo "IPA validation passed: executable, Mach-O type, bundle ID, and CFBundleExecutable are correct."
     artifacts:
       - build/**/*.ipa
+    publishing:
+      app_store_connect:
+        api_key: DKKZ68BT4T
+        issuer_id: 3a4c5db7-d5ac-4d59-9c72-52ebbd8ab4ba
+        submit_to_testflight: true
