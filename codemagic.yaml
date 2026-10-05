@@ -6,6 +6,8 @@ workflows:
     environment:
       groups:
         - appstore
+      integrations:
+        app_store_connect: Codemagic
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.rememberpills.app
@@ -61,5 +63,4 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        api_key: Codemagic
         submit_to_testflight: true
