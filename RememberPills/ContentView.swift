@@ -3,7 +3,7 @@ import WebKit
 import Network
 import UIKit
 
-private let dashboardURL = URL(string: "https://www.rememberpills.com/dashboard.php")!
+private let dashboardURL = URL(string: "https://www.rememberpills.com/app-login.php")!
 private let rememberPillsHosts: Set<String> = ["www.rememberpills.com", "rememberpills.com"]
 
 struct ContentView: View {
